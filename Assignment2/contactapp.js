@@ -1,3 +1,5 @@
+// Snack Expo link : https://snack.expo.dev/@jawadaliraza/assignment-
+//Code:
 import React, { useState } from 'react';
 import { View, Text, SectionList, TextInput, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 
