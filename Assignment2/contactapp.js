@@ -20,15 +20,12 @@ const ContactsApp = () => {
   const [searchText, setSearchText] = useState('');
   const [selectedContact, setSelectedContact] = useState(null);
 
-  // Process contacts for display
   const processContacts = () => {
-    // Filter by search text
     const filtered = contactsList.filter(contact => 
       contact.name.toLowerCase().includes(searchText.toLowerCase()) || 
       contact.number.includes(searchText)
     );
 
-    // Group contacts by category
     const grouped = filtered.reduce((groups, contact) => {
       const category = contact.group;
       groups[category] = groups[category] || [];
@@ -36,7 +33,6 @@ const ContactsApp = () => {
       return groups;
     }, {});
 
-    // Format for SectionList and sort names
     return Object.entries(grouped).map(([category, items]) => ({
       title: category,
       data: items.sort((a, b) => a.name.localeCompare(b.name))
@@ -93,7 +89,6 @@ const ContactsApp = () => {
   );
 };
 
-// Styling remains exactly the same as previous version
 const styles = StyleSheet.create({
   page: {
     flex: 1,
